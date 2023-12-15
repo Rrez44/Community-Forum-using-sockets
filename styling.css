@@ -1,0 +1,17 @@
+body{
+    background-color: #36393F;
+}
+.header-row{
+
+    background-color: #36454F;
+    color: white;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
+    margin: 0px 0px 15px 0px; 
+
+   
+  }
+.jumbotron-communityPost{
+    background-color: #D3D3D3;
+}
