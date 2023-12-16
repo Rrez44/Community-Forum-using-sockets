@@ -2,7 +2,7 @@
   "name": "ueb20_22_gr9",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js"
