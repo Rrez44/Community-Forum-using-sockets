@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styling.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row header-row">
+            <div class="col-sm">
+                <button class="btn btn-outline-info mr-2" href="#" role="button">Home</button>
+                <button class="btn btn-outline-info mr-2" href="#" role="button">Info</button>
+                <button class="btn btn-outline-info mr-2" href="#" role="button">Dashboard</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            <div class="row">
+            <div class="col">
+                <div class="title"><h1>Community Dashboard</h1></div>
+                    <div class="jumbotron jumbotron-chat">
+                        <div class="username">
+                            <span><i class="fa-solid fa-user"></i></span>
+                            <input type="text" id="username-input" class="username-input" value="anon" maxlength="20">
+                        </div>
+                        <ul class="message-container" id="message-container">
+                            <li class="message-left">
+                                <p 
+                                    class="message">lorem ipsum
+                                    <span>12/16/2023</span>
+                                </p>
+                                
+                            </li>
+                            <li class="message-right">
+                                <p class="message">
+                                    lorem ipsum
+                                    <span>12/16/2023</span>
+                                </p>
+                            </li>
+                            <li class="message-feedback">
+                                <p class="feedback" id="feedback">... typing a message</p>
+                            </li>
+                        </ul>
+                        <form class="message-form" id="message-form">
+                            <input type="text" name="message" id="message-input" class="message-input" placeholder="Type a message...">
+                            <div class="v-divider"></div>
+                            <button class="btn btn-dark" id="send-button" type="submit">Send <span><i class="fas fa-paper-plane"></i></span></button>
+                        </form>
+                        <h3 class="clients-total" id="clients-total">Total clients: 3</h3>
+                    </div>
+    
+            </div>
+            </div>
+            </div>
+
+    <script src="https://kit.fontawesome.com/74cd7f5a15.js" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
