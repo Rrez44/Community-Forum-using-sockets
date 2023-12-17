@@ -1,0 +1,114 @@
+body{
+    background-color: #36393F;
+    margin: 0px;
+}
+.margin-0{
+    margin: 0px;
+    padding: 0px;
+}
+.header-row{
+
+    background-color: #36454F;
+    color: white;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    margin-bottom: 10px;   
+  }
+.jumbotron-chat{
+    background-color: #D3D3D3;
+    position: relative;
+    border: 6px solid #b8b8b8;
+    height: 500px;
+    width: 900px;
+    left: 20%;
+
+}
+.username{
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    font-weight: bold;
+    margin: 5px;
+    width: 99%;
+}
+.username-input{
+    outline: none;
+    margin: 5px;
+    background-color: #D3D3D3;
+    border: none;
+}
+.username-input:hover{
+    border: 2px solid #36393F;
+    border-radius: 12px;
+}
+.message-container{
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px; /* Adjust this value as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+}
+.username-input:focus{
+    border: 2px solid #36393F;
+    border-radius: 12px;
+}
+.message-right, .message-left ,.message-feedback{
+    width: 50%;
+    list-style: none;
+    margin-bottom: 5px;
+}
+.message-right, .message-left{
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+.message-right{
+    text-align: right;
+    border-radius: 12px;
+    padding: 3px;
+    margin-right: 5px;
+    border: 5px;
+    box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    float: right;
+}
+.message-left{
+    text-align: left;
+    border-radius: 12px;
+    padding: 3px;
+    margin-left: 5px;
+    border: 5px;
+    box-shadow: 0px -2px 1px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.datetime{
+    display: block;
+    font-size: 12px;
+    margin-top: 3px;
+    font-style: italic;
+}
+.sender{
+    display: block;
+    margin-bottom: 4px;
+}
+.message-form{
+    position: absolute;
+    bottom: 3px;
+    width: 90%;
+    margin-bottom: 5px;
+}
+.message-input{
+    width: 80%;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: 5px;
+    font-size: 18px;
+}
+.send-message{
+    width: 500px;
+
+}
