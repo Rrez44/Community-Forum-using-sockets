@@ -15,9 +15,6 @@ body {
     color: var(--bs-body-color);
     text-align: var(--bs-body-text-align);
     background-color: #333333;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent;
- 
 }
 
 
@@ -41,12 +38,11 @@ a:hover {
     margin: 0;
     cursor: pointer
 }
-
 .btn.btn-primary {
     margin-top: 20px;
+    margin-left: 200px;
     border-radius: 15px
 }
-
 .panel {
     margin-top: 130px;
     position: absolute;
