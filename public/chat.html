@@ -4,18 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../styling.css">
+    <link rel="stylesheet" href="chatStyling.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row header-row">
-            <div class="col-sm">
-                <button class="btn btn-outline-info mr-2" href="#" role="button">Home</button>
-                <button class="btn btn-outline-info mr-2" href="#" role="button">Info</button>
-                <button class="btn btn-outline-info mr-2" href="#" role="button">Dashboard</button>
-            </div>
+    <div id="container">
+        <div class="navT">
+            <div class="icon"></div>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="index.html">Hom<span class="space">e</span></a></li>
+                <li><a href="about.html">Abou<span class="space">t</span></a></li>
+                <li><a href="blog.html">Blo<span class="space">g</span></a></li>
+                <li><a href="contact.html">Contac<span class="space">t</span></a></li>
+            </ul>
+        </div>
+        <div class="music-player">
+            <form id="youtube-form" class="music-form">
+                <fieldset>
+                <legend>Music Player</legend>
+                <input  class="youtube-text" type="text" id="youtube-link-input" placeholder="Paste YouTube link here">
+                <button class="btn btn-success play-button" id="play-button">Play Music</button>
+                <div class="menu">
+                    <div class="label">Settings <i class="fa-solid fa-gear"></i></div>
+                    <div class="spacer"></div>
+                    <div class="item"><span><button type="button" class="btn btn-dark settings-button" id="mute-button" onclick="muteAudio()"><i class="fa-solid fa-volume-xmark"></i></button></span></div>
+                    <div class="item"><span><button type="button" class="btn btn-dark settings-button" id="lower-button" onclick="decreaseAudio()"><i class="fa-solid fa-volume-low"></i></button></span></div>
+                    <div class="item"><span><button type="button" class="btn btn-dark settings-button" id="increase-button" onclick="increaseAudio()"><i class="fa-solid fa-volume-high"></i></button></span></div>
+                  </div>
+            </form>
+
+            </fieldset>
+
         </div>
         <div class="row">
             <div class="col">
@@ -26,38 +52,44 @@
                         <div class="username">
                             <span><i class="fa-solid fa-user"></i></span>
                             <input type="text" id="username-input" class="username-input" value="anon" maxlength="20">
+                            <span id="user-count">Number of people connected:</span>
                         </div>
                         <ul class="message-container" id="message-container">
-                            <li class="message-left">
-                                <p 
-                                    class="message">lorem ipsum
-                                    <span>12/16/2023</span>
-                                </p>
-                                
-                            </li>
-                            <li class="message-right">
-                                <p class="message">
-                                    lorem ipsum
-                                    <span>12/16/2023</span>
-                                </p>
-                            </li>
-                            <li class="message-feedback">
-                                <p class="feedback" id="feedback">... typing a message</p>
-                            </li>
                         </ul>
+                        
                         <form class="message-form" id="message-form">
+                            <hr>
                             <input type="text" name="message" id="message-input" class="message-input" placeholder="Type a message...">
-                            <div class="v-divider"></div>
-                            <button class="btn btn-dark" id="send-button" type="submit">Send <span><i class="fas fa-paper-plane"></i></span></button>
+                            <button class="btn btn-dark send-message" id="send-button" type="submit">Send <span><i class="fas fa-paper-plane"></i></span></button>
                         </form>
-                        <h3 class="clients-total" id="clients-total">Total clients: 3</h3>
+
                     </div>
+                    
     
             </div>
             </div>
             </div>
+        </div>
+        <div id="youtube-player"></div>
+
+
+
+
 
     <script src="https://kit.fontawesome.com/74cd7f5a15.js" crossorigin="anonymous"></script>
+    <script src="connect.js"></script>
+    <script>
+        $(".navT").on("click", function() {
+            $(this).toggleClass("active");
+            $("#menu").toggleClass("open");
+            $(".content").toggleClass("shift");
+        });
+    </script>
+    <script>
+        document.getElementById('main-button').addEventListener('click', function() {
+    document.getElementById('control-panel').classList.toggle('active');});
+    </script>
+
 
 
 </body>
