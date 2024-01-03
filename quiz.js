@@ -2,7 +2,7 @@ var modal = document.getElementById("quizModal");
 var quizContent = document.getElementById("quizContent");
 
 const quizzes = {
-    ueb: {
+  ueb: {
     questions: [
       {
         question: "What does HTML stand for?",
@@ -1140,3 +1140,54 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+const body = document.querySelector("body"),
+  nav = document.querySelector("nav"),
+  modeToggle = document.querySelector(".dark-light");
+
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark-mode") {
+  body.classList.add("dark");
+}
+
+modeToggle.addEventListener("click", () => {
+  modeToggle.classList.toggle("active");
+  body.classList.toggle("dark");
+
+  if (!body.classList.contains("dark")) {
+    localStorage.setItem("mode", "light-mode");
+  } else {
+    localStorage.setItem("mode", "dark-mode");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const infoBtn = document.getElementById("infoBtn");
+
+  /* function getCurrentSection() {
+    const sections = document.querySelectorAll(".section");
+    for (const section of sections) {
+      if (section.style.display !== "none") {
+        return section.querySelector("h2").textContent;
+      }
+    }
+    return "Unknown Section";
+  }
+
+  function showInfo(info) {
+    alert("You are in " + info);
+  }*/ $(document).ready(function () {
+    $("#dialog").dialog({
+      autoOpen: false,
+      modal: true,
+    });
+
+    $("#infoBtn").on("click", function () {
+      $("#dialog").dialog("open");
+    });
+  });
+});
+function toggleDropdown() {
+  var dropdownContent = document.querySelector('.dropdown-content');
+  dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
+}
