@@ -7,29 +7,86 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="chatStyling.css">
+    <link rel="stylesheet" href="styling/chatStyling.css">
     <script src="https://www.youtube.com/iframe_api"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="styling/navbar.css">
+
+    <script>
+      $(document).ready(function() {
+          $('#user-input').click(function(e) {
+              e.preventDefault();
+              $("#logout_btn").fadeToggle(200)
+          });
+      });
+      </script>
+      <script>
+        $(document).ready(function () {
+    $("#logout_btn").click(function (event) {
+      event.preventDefault();
+
+
+      $.ajax({
+        type: "POST",
+        url: "/logout",
+        success: function (data) {
+
+          console.log('Logged out successfully');
+          window.location.href = '/login';
+        },
+        error: function (error) {
+
+          console.error('Error occurred during logout:', error);
+        },
+      });
+    });
+  });
+      </script>
+      
+
+
 
 </head>
 
 <body>
     <div id="container">
-        <div class="navT">
-            <div class="icon"></div>
-        </div>
-        <div id="menu">
-            <ul>
-                <li><a href="index.html">Hom<span class="space">e</span></a></li>
-                <li><a href="about.html">Abou<span class="space">t</span></a></li>
-                <li><a href="blog.html">Blo<span class="space">g</span></a></li>
-                <li><a href="contact.html">Contac<span class="space">t</span></a></li>
-            </ul>
-        </div>
+      <div id="navbar-container">
+      <nav class="navbar navbar-expand-custom navbar-mainbg">
+        <a class="navbar-brand navbar-logo" href="/home">Fiek Community</a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                <li class="nav-item">
+                    <a class="nav-link" href="/chat"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/quiz"><i class="far fa-clone"></i>Quiz Prep</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/shop"><i class="fa-solid fa-barcode"></i>Gift-Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact"><i class="far fa-chart-bar"></i>Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  id="user-input" href=""><i class="far fa-address-book"></i>User</a>
+                </li>
+              </ul>
+          </div>
+      </nav>
+        <button id="logout_btn" class="btn btn-dark logout_btn">Log Out</button>
+      </div>
+
         <div class="music-player">
             <form id="youtube-form" class="music-form">
-                <fieldset>
+                <fieldset id="draggableDiv">
+                <span><button id="dragHandle" style="width: 10px; height: 10px; border-radius: 50%;background-color: rgba(50, 50, 50, 0.816); border: 1px solid rgb(105, 10, 0);"></button></span>
                 <legend>Music Player</legend>
-                <input  class="youtube-text" type="text" id="youtube-link-input" placeholder="Paste YouTube link here">
+                <input  class="youtube-text" type="text" id="youtube-link-input" placeholder="Paste YouTube link here" list='youtube_links' autocomplete="off">
                 <button class="btn btn-success play-button" id="play-button">Play Music</button>
                 <div class="menu">
                     <div class="label">Settings <i class="fa-solid fa-gear"></i></div>
@@ -38,10 +95,18 @@
                     <div class="item"><span><button type="button" class="btn btn-dark settings-button" id="lower-button" onclick="decreaseAudio()"><i class="fa-solid fa-volume-low"></i></button></span></div>
                     <div class="item"><span><button type="button" class="btn btn-dark settings-button" id="increase-button" onclick="increaseAudio()"><i class="fa-solid fa-volume-high"></i></button></span></div>
                   </div>
+                  </fieldset>
             </form>
 
             </fieldset>
-
+            <div class="drawingCanvas" id="dc_overlay" style="display: none;">
+            <canvas id="drawingCanvas" class="dc_styling" style="background-color: aliceblue;" width="300" height="250"></canvas>
+            <div>
+            <button id="clearButton" class="btn btn-danger">Clear</button>
+            <button id="sendButton" class="btn btn-success">Send</button>
+            </div>
+            </div>
+            
         </div>
         <div class="row">
             <div class="col">
@@ -51,7 +116,7 @@
                     <div class="jumbotron jumbotron-chat">
                         <div class="username">
                             <span><i class="fa-solid fa-user"></i></span>
-                            <input type="text" id="username-input" class="username-input" value="anon" maxlength="20">
+                            <input type="text" id="username-chat" class="username-input" value="anon" maxlength="20" disabled>
                             <span id="user-count">Number of people connected:</span>
                         </div>
                         <ul class="message-container" id="message-container">
@@ -59,6 +124,7 @@
                         
                         <form class="message-form" id="message-form">
                             <hr>
+                            <button class="btn btn-dark canvas-message" id="canvas-message" type="button"><i class="fa-solid fa-image"></i></button>
                             <input type="text" name="message" id="message-input" class="message-input" placeholder="Type a message...">
                             <button class="btn btn-dark send-message" id="send-button" type="submit">Send <span><i class="fas fa-paper-plane"></i></span></button>
                         </form>
@@ -71,9 +137,18 @@
             </div>
         </div>
         <div id="youtube-player"></div>
+        <datalist id="youtube_links">
+          <option value="https://www.youtube.com/watch?v=xyfoyugCB8Y&ab_channel=XavierStillUndefeated">Kanye West</option>
+          <option value="https://www.youtube.com/watch?v=JtuuBmObv5Y&ab_channel=ShkurteFejza">Shkurte Fejza</option>
+          <option value="https://www.youtube.com/watch?v=agGtTkbRvm4&ab_channel=NexhmijePagarusha">Nexhmije Pagarusha</option>
+          <option value="https://www.youtube.com/watch?v=W2MpGCL8-9o&ab_channel=LatinHype">Maneskin</option>
+        </datalist>
 
-
-
+        <footer>
+   
+          <div style="background-color: #181818;color:rgb(189, 189, 189); height: 20px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center; font-size: small;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>
+         
+      </footer>
 
 
     <script src="https://kit.fontawesome.com/74cd7f5a15.js" crossorigin="anonymous"></script>
@@ -85,12 +160,59 @@
             $(".content").toggleClass("shift");
         });
     </script>
+    
     <script>
         document.getElementById('main-button').addEventListener('click', function() {
     document.getElementById('control-panel').classList.toggle('active');});
     </script>
+    <script>
+        //// this gets the username and changes the input field 
+        $.get('/getsession', function(data) {
+    if (data.isLoggedIn) {
+        console.log('Logged in as:', data.username);
+        $('#user-input').text(data.username);
+        $('#username-chat').val(data.username);
+    } else {
+        window.location.href = '/login';
+    }
+});
+    </script>
+    <script>
+    $(document).ready(function() {
+
+      $("#draggableDiv").draggable({
+        start: function(event, ui) {
+      initialPosition = ui.helper.position();
+    },
+                  
+      });
+      $('#dragHandle').click(function(){
+        setTimeout(function() {
+        $("#draggableDiv").animate({
+      left: initialPosition.left,
+      top: initialPosition.top
+    }, 500);
+  },600 ) 
 
 
+      })
+
+
+    });
+    </script>
+    <script>
+$(document).ready(function() {
+
+    $("#canvas-message").click(function() {
+
+        $("#dc_overlay").fadeToggle(200);
+    });
+    
+    $("#sendButton").click(function() {
+        $("#dc_overlay").fadeToggle(500); 
+    });
+});
+  </script>
 
 </body>
 </html>
