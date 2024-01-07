@@ -16,7 +16,9 @@ body {
     text-align: var(--bs-body-text-align);
     background-color: #333333;
 }
-
+html{
+    background-color: #212328;
+}
 
 .panel-heading {
     text-align: center;
