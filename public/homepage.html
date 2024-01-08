@@ -2,10 +2,10 @@
 <html>
     <head>
         <title>FIEK Community</title>
-        <link rel="stylesheet" type="text/css" href="/public/styling/homepage.css">
+        <link rel="stylesheet" type="text/css" href="styling/homepage.css">
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-        <script src="/public/scripts/smoothScroll.js"></script>
+        <script src="scripts/smoothScroll.js"></script>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       
@@ -13,9 +13,21 @@
        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="/public/styling/navbar.css">
+        <link rel="stylesheet" href="styling/navbar.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script>
+            //// this gets the username and changes the input field 
+            $.get('/getsession', function(data) {
+        if (data.isLoggedIn) {
+            console.log('Logged in as:', data.username);
+            $('#user-input').text(data.username);
+            $('#username-chat').val(data.username);
+        } else {
+            window.location.href = '/login';
+        }
+    });
+        </script>
         <script>
                 $(function() {
                     $(".tre").on("click", function(){
@@ -114,7 +126,7 @@
         <div class="begin">
             <div class="karta" style="z-index: 100;">
                 <div class="permbajtja_para">
-                <div class="fronti">
+                <div class="fronti" style="color: rgb(120, 120, 120);">
                     <h3 class="titulli">YOU RELAX</h3>
                     <p class="subtitle">Welcome to Fiek Community!</p>
                 </div> 
@@ -178,8 +190,8 @@
                          audience within the FIEK community.
                             </div>
                                 <video class="video1" width="640" height="360" controls>
-                                    <source src="/public/images/video.mp4" type="video/mp4">
-                                    <source src="/public/images/video.ogg" type="video/ogg">
+                                    <source src="images/video.mp4" type="video/mp4">
+                                    <source src="images/video.ogg" type="video/ogg">
                                     Your browser does not support the video tag.
                                 </video>
                         </div>
@@ -192,15 +204,15 @@
             </div>
             </div>
             <audio id="myAudio1">
-                <source src="/public/images/clickk.mp3" type="audio/mpeg">
+                <source src="images/clickk.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
             <audio id="myAudio2">
-                <source src="/public/images/click3.mp3" type="audio/mpeg">
+                <source src="images/click3.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
             <audio id="myAudio3">
-                <source src="/public/images/click2.mp3" type="audio/mpeg">
+                <source src="images/click2.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
             <script>
@@ -300,15 +312,15 @@
                             <br>
                         </tr>
                         <tr>
-                        <td style="border-right:3px solid; border-image: url(/public/images/black.jpg) 30 stretch;"><img src="/public/images/portfolio.png" alt="Bag Pic" style="width: 30px; height: 30px;"><br/>
+                        <td style="border-right:3px solid; border-image: url(images/black.jpg) 30 stretch;"><img src="images/portfolio.png" alt="Bag Pic" style="width: 30px; height: 30px;"><br/>
                         <p style="color:black; font-size:20px;">Projects</p>
                         <p style="font-size: 60px; color:black; font-weight: bold; font-family: 'Rajdhani', sans-serif;">56</p>
                         </td>
-                        <td style="border-right:3px solid black; padding-right: 20px; padding-left:20px;"><img src="/public/images/mouse.png" alt="Mouse Pic" style="width: 40px; height:40px;"><br/>
+                        <td style="border-right:3px solid black; padding-right: 20px; padding-left:20px;"><img src="images/mouse.png" alt="Mouse Pic" style="width: 40px; height:40px;"><br/>
                         <p style="color:black; font-size:20px;">Working Days</p>
                         <p  style="font-size: 60px; color:black; font-weight: bold; font-family: 'Rajdhani', sans-serif;">312</p>
                         </td>
-                        <td><img src="/public/images/customer.png" alt="Costumer Pic" style="width: 40px; height:40px;"><br/>
+                        <td><img src="images/customer.png" alt="Costumer Pic" style="width: 40px; height:40px;"><br/>
                             <p style="color:black; font-size:20px;">Costumers</p>
                             <p style="font-size: 60px; color:black; font-weight: bold; font-family: 'Rajdhani', sans-serif;">68</p>
                         </td>
@@ -349,12 +361,12 @@
                         </div>
                     </div>
                     <div class="s-slider">
-                        <img src="/public/images/ikona.png" class="active" alt="Costumer 1" data-id="0">
-                        <img src="/public/images/ikona.png" alt="Costumer 2" data-id="1">
-                        <img src="/public/images/ikona.png" alt="Costumer 3" data-id="2">
+                        <img src="images/ikona.png" class="active" alt="Costumer 1" data-id="0">
+                        <img src="images/ikona.png" alt="Costumer 2" data-id="1">
+                        <img src="images/ikona.png" alt="Costumer 3" data-id="2">
                     </div>
                 </div>
-                <script src="/public/scripts/testimonials.js"></script>
+                <script src="scripts/testimonials.js"></script>
             </div>
             <div class="custom-shape-divider-bottom-1610404607">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -369,7 +381,7 @@
             
             
                     <div class="member">
-                    <img src="/public/images/rinor.jpg" alt="Team Member">
+                    <img src="images/rinor.jpg" alt="Team Member">
                     <div class="m-name">Rinor Muji</div>
                     <div class="m-position"><i>Content Writer</i></div>
                     <div class="m-social">
@@ -380,7 +392,7 @@
                     </div>
             
                     <div class="member">
-                        <img src="/public/images/rrezon.jpg" alt="Team Member">
+                        <img src="images/rrezon.jpg" alt="Team Member">
                         <div class="m-name">Rrezon Beqiri</div>
                         <div class="m-position"><i>Media Strategist</i></div>
                         <div class="m-social">
@@ -390,7 +402,7 @@
                         </div>
                     </div>
                     <div class="member">
-                        <img src="/public/images/reart.jpg" alt="Team Member">
+                        <img src="images/reart.jpg" alt="Team Member">
                         <div class="m-name">Reart Krasniqi</div>
                         <div class="m-position"><i>Production Manager</i></div>
                         <div class="m-social">
@@ -400,7 +412,7 @@
                         </div>
                     </div>
                     <div class="member">
-                        <img src="/public/images/arbios.jpg" alt="Team Member">
+                        <img src="images/arbios.jpg" alt="Team Member">
                         <div class="m-name">Arbios Morina</div>
                         <div class="m-position"><i>Art Director</i></div>
                         <div class="m-social">
@@ -410,7 +422,7 @@
                         </div>
                     </div>
                     <div class="member">
-                        <img src="/public/images/argjend.jpg" alt="Team Member">
+                        <img src="images/argjend.jpg" alt="Team Member">
                         <div class="m-name">Argjend Nimanaj</div>
                         <div class="m-position"><i>Web Designer</i></div>
                         <div class="m-social">
@@ -420,7 +432,7 @@
                         </div>
                     </div>
                     <div class="member">
-                        <img src="/public/images/vesa.jpg" alt="Team Member">
+                        <img src="images/vesa.jpg" alt="Team Member">
                         <div class="m-name">Vesa Grainca</div>
                         <div class="m-position"><i>Web Developer</i></div>
                         <div class="m-social">
@@ -480,7 +492,7 @@
                 </div>
             </div>
             </div>
-                <div style="background-color: #181818;color:rgb(189, 189, 189); height: 25px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>         
+                <div style="background-color: #181818;color:rgb(189, 189, 189); height: 25px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center; z-index: 50000;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>         
         </footer>
         <script>
             $('#logout_btn').hide()
@@ -522,7 +534,7 @@
           });
         });
             </script>
-        <script src="/public/scripts/smoothScroll.js"></script>
+        <script src="scripts/smoothScroll.js"></script>
          
             </body>
         </html>

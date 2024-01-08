@@ -2,21 +2,60 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="/public/styling/TableView.css">
-    <script src="/public/scripts/form_validation.js"></script>
-    <link rel="stylesheet" href="/public/styling/SingleProduct.css">
+    <link rel="stylesheet" type="text/css" href="styling/TableView.css">
+    <script src="scripts/form_validation.js"></script>
+    <link rel="stylesheet" href="styling/SingleProduct.css">
    
     <title>E-Shopping</title>
-    <link rel="shortcut icon" type="image/png" href="/public/images/3d.png">
+    <link rel="shortcut icon" type="image/png" href="images/3d.png">
     
 
-    <script type="text/javascript" src="/public/scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="scripts/jquery-3.5.1.js"></script>
     <script src="https://kit.fontawesome.com/096e4d997b.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/public/styling/navbar.css">
+    <link rel="stylesheet" href="styling/navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
+    <script>
+        $('#logout_btn').hide();
+        let clicked = 0;
+        $(document).ready(function() {
+            $('#user-input').click(function(e) {
+                e.preventDefault();
+                if(clicked === 0){
+                $("#logout_btn").slideDown(400)
+                clicked = 1;
+                }
+                else{
+                  $("#logout_btn").slideUp(200)
+                  clicked =0;
+                }
+  
+            });
+        });
+        </script>
+        <script>
+          $(document).ready(function () {
+      $("#logout_btn").click(function (event) {
+        event.preventDefault();
+  
+  
+        $.ajax({
+          type: "POST",
+          url: "/logout",
+          success: function (data) {
+  
+            console.log('Logged out successfully');
+            window.location.href = '/login';
+          },
+          error: function (error) {
+  
+            console.error('Error occurred during logout:', error);
+          },
+        });
+      });
+    });
+        </script>
   
 </head>
 
@@ -34,10 +73,10 @@
                       <a class="nav-link" href="/chat"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="/prep"><i class="far fa-clone"></i>Quiz Prep</a>
+                      <a class="nav-link" href="/quiz"><i class="far fa-clone"></i>Quiz Prep</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/products"><i class="fa-solid fa-barcode"></i>Gift-Shop</a>
+                      <a class="nav-link" href="/shop"><i class="fa-solid fa-barcode"></i>Gift-Shop</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="/contact"><i class="far fa-chart-bar"></i>Contact Us</a>
@@ -69,7 +108,7 @@
     <section id="seksioni-produktet" style="position: relative; z-index: 4000;">
         <section id="tres">
             <div id="icons">
-                <a href="/products" title="Gallery View" style="text-shadow: none;"><i class="fas fa-th"></i></a>
+                <a href="/shop" title="Gallery View" style="text-shadow: none;"><i class="fas fa-th"></i></a>
                 <i class="fas fa-list"></i>
             </div>
             <div id="Bags">
@@ -135,7 +174,7 @@
     </section>
     <br>
     <br>
-    <script type="text/javascript" src="/public/scripts/TableView.js"></script>
+    <script type="text/javascript" src="scripts/TableView.js"></script>
 
     <div id="bigDiv" style="z-index: 6000;">
         <div class="form-popup" id="myForm" style="border-radius: 15px;">
@@ -189,20 +228,26 @@
     function showAlert(event) {
         event.preventDefault();
         alert("Porosia është bërë me sukses!");
-        window.location.href = "/products";
+        window.location.href = "/shop";
     }
     </script>
-<script>
-    $(document).ready(function() {
-        $('#user-input').click(function(e) {
-            e.preventDefault();
-            $("#logout_btn").fadeToggle(200)
-        });
+
+        <script>
+            //// this gets the username and changes the input field 
+            $.get('/getsession', function(data) {
+        if (data.isLoggedIn) {
+            console.log('Logged in as:', data.username);
+            $('#user-input').text(data.username);
+            $('#username-chat').val(data.username);
+        } else {
+            window.location.href = '/login';
+        }
     });
-    </script>
+        </script>
+
 <footer>
    
-    <div style="background-color: #181818;color:rgb(189, 189, 189); height: 25px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>
+    <div style="z-index: 50000; background-color: #181818;color:rgb(189, 189, 189); height: 20px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center; font-size: small;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>
    
 </footer>
 

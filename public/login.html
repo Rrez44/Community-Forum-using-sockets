@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
-    <link rel="stylesheet" href="/public/styling/login.css">
+    <link rel="stylesheet" href="styling/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body style="background-color: #333333;">
     <div class="container">
@@ -16,16 +17,16 @@
                         <h3 class="pt-3 font-weight-bold">Login</h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form action="#" method="post">
+                        <form id='login-form' action="/login" method="post">
                             <div class="form-group py-2">
-                                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" placeholder="Username or Email" required> </div>
+                                <div class="input-field"> <span class="far fa-user p-2"></span> <input type="text" name='username' placeholder="Username" required> </div>
                             </div>
                             <div class="form-group py-1 pb-2">
-                                <div class="input-field"> <span class="fas fa-lock px-2"></span> <input type="password" placeholder="Enter your Password" required> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
+                                <div class="input-field"> <span class="fas fa-lock px-2"></span> <input name='password' type="password" placeholder="Password" required> <button class="btn bg-white text-muted"> <span class="far fa-eye-slash"></span> </button> </div>
                             </div>
-                            <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">Remember me!</label> <a href="/signup" id="forgot" class="font-weight-bold">Forgot password?</a> </div>
-                            <div class="btn btn-primary btn-block mt-3">Login</div>
-                            <div class="text-center pt-4 text-muted">Don't have an account? <a href="/signup">Sign up</a> </div>
+                            <div class="form-inline"> <input type="checkbox" name="remember" id="remember"> <label for="remember" class="text-muted">Remember me!</label> <a href="#" id="forgot" class="font-weight-bold">Forgot password?</a> </div>
+                            <div><button type='submit' class="btn btn-primary btn-block mt-3">Login</button></div>
+                            <div class="text-center pt-4 text-muted">Don't have an account? <a href="signup.html">Sign up</a> </div>
                         </form>
                     </div>
                     <div class="mx-3 my-2 py-2 bordert">
@@ -38,5 +39,32 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+$('#login-form').submit(function(e) {
+e.preventDefault(); 
+
+var formData = $(this).serialize();
+
+$.ajax({
+    type: 'POST',
+    url: '/login',
+    data: formData,
+    success: function(response) {
+          if (response.success) {
+            window.location.href = '/chat';
+        } else {
+            alert('Login failed: ' + response.message);
+        }
+    },
+    error: function(xhr, status, error) {
+        alert('Error during login: ' + error);
+    }
+});
+});
+});
+
+
+</script>
 </body>
 </html>

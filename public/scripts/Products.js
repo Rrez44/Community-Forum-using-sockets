@@ -9,35 +9,35 @@ function Product(title, price, image, producer, category, city) {
   
   var accessories = {
     "products": [
-        new Product("White Mug", "10\u20ac", "/public/images/gota1.jpg", "FC Staff", "Accessories", "Prishtina"),
-        new Product("Black Mug", "10\u20ac", "/public/images/gota2.jpg", "FC Staff", "Accessories", "Prishtina"),
-        new Product("Leather Handbags", "90\u20ac", "/public/images/bags3.jpg", "FC Staff", "Accessories", "Prishtina"),
-        new Product("Recyclable Handbags", "80\u20ac", "/public/images/bags4.jpg", "FC Staff", "Accessories", "Prishtina"),
-        new Product("Hats", "25\u20ac", "/public/images/bags5.jpg", "FC Staff", "Accessories", "Prishtina"),
-        new Product("Friendship Bracelet", "35\u20ac", "/public/images/bags6.jpg", "FC Staff", "Accessories", "Prishtina")
+        new Product("White Mug", "10\u20ac", "images/gota1.jpg", "FC Staff", "Accessories", "Prishtina"),
+        new Product("Black Mug", "10\u20ac", "images/gota2.jpg", "FC Staff", "Accessories", "Prishtina"),
+        new Product("Leather Handbags", "90\u20ac", "images/bags3.jpg", "FC Staff", "Accessories", "Prishtina"),
+        new Product("Recyclable Handbags", "80\u20ac", "images/bags4.jpg", "FC Staff", "Accessories", "Prishtina"),
+        new Product("Hats", "25\u20ac", "images/bags5.jpg", "FC Staff", "Accessories", "Prishtina"),
+        new Product("Friendship Bracelet", "35\u20ac", "images/bags6.jpg", "FC Staff", "Accessories", "Prishtina")
       ]
       
 }
   
   var clothes = {
     "products": [
-      new Product("Boxers", "10\u20ac", "/public/images/clothes1.jpg", "FC Staff", "Clothes", "Prishtina"),
-      new Product("Pullovers", "50\u20ac", "/public/images/clothes2.jpg", "FC Staff", "Clothes", "Prishtina"),
-      new Product("Hoodies", "90\u20ac", "/public/images/clothes3.jpg", "FC Staff", "Clothes", "Prishtina"),
-      new Product("Socks", "10\u20ac", "/public/images/clothes4.jpg", "FC Staff", "Clothes", "Prishtina"),
-      new Product("T-Shirts", "70\u20ac", "/public/images/clothes5.jpg", "FC Staff", "Clothes", "Prishtina"),
-      new Product("Hoodie", "55\u20ac", "/public/images/clothes6.jpg", "FC Staff", "Clothes", "Prishtina")
+      new Product("Boxers", "10\u20ac", "images/clothes1.jpg", "FC Staff", "Clothes", "Prishtina"),
+      new Product("Pullovers", "50\u20ac", "images/clothes2.jpg", "FC Staff", "Clothes", "Prishtina"),
+      new Product("Hoodies", "90\u20ac", "images/clothes3.jpg", "FC Staff", "Clothes", "Prishtina"),
+      new Product("Socks", "10\u20ac", "images/clothes4.jpg", "FC Staff", "Clothes", "Prishtina"),
+      new Product("T-Shirts", "70\u20ac", "images/clothes5.jpg", "FC Staff", "Clothes", "Prishtina"),
+      new Product("Hoodie", "55\u20ac", "images/clothes6.jpg", "FC Staff", "Clothes", "Prishtina")
     ]
   }
   
   var items = {
     "products": [
-      new Product("Water Thermos", "20\u20ac", "/public/images/item1.jpg", "FC Staff", "Items", "Prishtina"),
-      new Product("Case", "15\u20ac", "/public/images/item2.jpg", "FC Staff", "Items", "Prishtina"),
-      new Product("Water Thermos", "20\u20ac", "/public/images/item3.jpg", "FC Staff", "Items", "Prishtina"),
-      new Product("Stickers", "5\u20ac", "/public/images/item4.jpg", "FC Staff", "Items", "Prishtina"),
-      new Product("Key chain", "10\u20ac", "/public/images/item5.jpg", "FC Staff", "Items", "Prishtina"),
-      new Product("Pen", "8\u20ac", "/public/images/item6.jpg", "FC Staff", "Items", "Prishtina")
+      new Product("Water Thermos", "20\u20ac", "images/item1.jpg", "FC Staff", "Items", "Prishtina"),
+      new Product("Case", "15\u20ac", "images/item2.jpg", "FC Staff", "Items", "Prishtina"),
+      new Product("Water Thermos", "20\u20ac", "images/item3.jpg", "FC Staff", "Items", "Prishtina"),
+      new Product("Stickers", "5\u20ac", "images/item4.jpg", "FC Staff", "Items", "Prishtina"),
+      new Product("Key chain", "10\u20ac", "images/item5.jpg", "FC Staff", "Items", "Prishtina"),
+      new Product("Pen", "8\u20ac", "images/item6.jpg", "FC Staff", "Items", "Prishtina")
     ]
   }
   

@@ -1,433 +1,384 @@
+
+
 body{
-    background-color: #212328;
-    margin: 0px;
+  background-color: #212328;
+  margin: 0px;
+  overflow: hidden;
 }
 .jumbotron{
-    margin-top: 1.5em;
-    position: fixed;
+  margin-top: 1.5em;
+  position: fixed;
 }
 
-.navT {
-    -webkit-transition: all 0.25s;
-    z-index: 111;
-    cursor: pointer;
-    width: 100%;
-    background: #212121;
-    height: 65px;
-    left: 0;
-    top: 0;
-    position: fixed;
-  }
-  .navT .icon {
-    -webkit-transition: all 0.25s;
-    position: absolute;
-    width: 30px;
-    height: 1px;
-    left: 15px;
-    top: 30px;
-    background-color: white;
-  }
-  .navT .icon:before,
-  .navT .icon:after {
-    -webkit-transition: all 0.25s;
-    width: 30px;
-    height: 1px;
-    left: 0;
-    background: white;
-    position: absolute;
-    content: "";
-  }
-  .navT .icon:before {
-    top: -10px;
-  }
-  .navT .icon:after {
-    top: 10px;
-  }
-  .navT:hover {
-    background: black;
-  }
-  .navT:hover .icon:before {
-    top: -12px;
-  }
-  .navT:hover .icon:after {
-    top: 12px;
-  }
-  .navT.active .icon {
-    -webkit-transform: rotate(180deg);
-    background-color: transparent;
-    left: 10px;
-  }
-  .navT.active .icon:before,
-  .navT.active .icon:after {
-    top: 0;
-  }
-  .navT.active .icon:before {
-    -webkit-transform: rotate(45deg);
-  }
-  .navT.active .icon:after {
-    -webkit-transform: rotate(-45deg);
-  }
-  
-  #menu {
-    z-index: 111;
-    -webkit-transition: all 0.5s;
-    text-align: center;
-    position: fixed;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    top: 65px;
-    font-size: 18px;
-    font-family: sans-serif;
-    font-weight: 100;
-    text-transform: uppercase;
-    width: 100%;
-    height: 0;
-    border-bottom: 1px solid transparent;
-    overflow: hidden;
-  }
-  #menu ul {
-    list-style: none;
-    padding: 0;
-    letter-spacing: 0.4em;
-  }
-  #menu li:first-child {
-    margin-top: 0;
-  }
-  
-  #menu ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  #menu li {
-    -webkit-transition: all 0.2s;
-    margin-top: 20px;
-    padding: 5px 0;
-    color: white;
-  }
-  #menu a {
-    padding: 8px;
-    -webkit-transition: all 0.25s;
-    cursor: pointer;
-  }
-  #menu a:hover {
-    letter-spacing: 0.5em;
-    text-decoration: none;
-  }
-  #menu.open {
-    height: 270px;
-    width: 100%;
-    background: #0f0e0e;
-    border-bottom: 1px solid black;
-  }
-  
+.tooltip {
+position: absolute;
+background-color: #f9f9f9;
+border: 1px solid #ccc;
+padding: 10px;
+border-radius: 5px;
+display: none;
+}
+
+.tooltip.active {
+display: block;
+}
+
+
+.section {
+display: none;
+}
+
+
+
+.dropbtn {
+background-color: #242526;
+color: white;
+padding: 16px;
+font-size: 16px;
+border: none;
+padding-top: 30px;
+}
+
 .margin-0{
-    margin: 0px;
-    padding: 0px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .jumbotron-chat{
-    margin-top: 70px;
-    background-color: #D3D3D3;
-    position: relative;
-    border: 6px solid #5e5e5e;
-    height: 500px;
-    width: 900px;
-    left: 25%;
-    scroll-behavior: smooth;
-    top: 100px;
+  margin-top: 40px;
+  background-color: #D3D3D3;
+  position: relative;
+  border: 3px solid #444444;
+  border-radius: 20px;
+  height: 500px;
+  width: 900px;
+  left: 25%;
+  scroll-behavior: smooth;
+  top: 120px;
 
 }
 .username{
-    position: absolute;
-    top: 2px;
-    left: 5px;
-    font-weight: bold;
-    margin: 5px;
-    width: 99%;
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  font-weight: bold;
+  margin: 5px;
+  width: 99%;
 }
 .username-input{
-    outline: none;
-    margin: 5px;
-    background-color: #D3D3D3;
-    border: none;
+  outline: none;
+  margin: 5px;
+  background-color: #D3D3D3;
+  border: none;
+  color: #0f0e0e;
+
 }
-.username-input:hover{
-    border: 2px solid #36393F;
-    border-radius: 12px;
-}
+
 .message-container{
-    list-style-type: none;
-    padding: 0;
-    max-height: 300px; /* Adjust this value as needed */
-    overflow-y: auto; /* Enables vertical scrolling */
+  list-style-type: none;
+  padding: 0;
+  max-height: 300px; 
+  overflow-y: auto; 
 }
-.username-input:focus{
-    border: 2px solid #36393F;
-    border-radius: 12px;
-}
+
 .message-right, .message-left ,.message-feedback{
-    width: 50%;
-    list-style: none;
-    margin-bottom: 5px;
-    
+  width: 50%;
+  list-style: none;
+  margin-bottom: 5px;
+  text-wrap: pretty;
+  
 }
 .message-right, .message-left{
-    font-size: 18px;
-    margin-bottom: 10px;
-    margin-top: 4px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 4px;
 }
 .message-right:hover, .message-left:hover{
-    background-color: rgba(237, 233, 157,0.3)
+  background-color: rgba(237, 233, 157,0.3)
 }
 .message-right{
-    text-align: right;
-    border-radius: 12px;
-    padding: 3px;
-    margin-right: 5px;
-    border: 5px;
+  text-align: right;
+  border-radius: 12px;
+  padding: 3px;
+  margin-right: 5px;
+  border: 5px;
 
-    border-radius: 10px;
-    overflow: hidden;
-    float: right;
+  border-radius: 10px;
+  overflow: hidden;
+  float: right;
 }
 .message-left{
-    text-align: left;
-    border-radius: 12px;
-    padding: 3px;
-    margin-left: 5px;
-    border-radius: 10px;
-    overflow: hidden;
+  text-align: left;
+  border-radius: 12px;
+  padding: 3px;
+  margin-left: 5px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .datetime{
-    display: block;
-    font-size: 12px;
-    margin-top: 3px;
-    font-style: italic;
+  display: block;
+  font-size: 12px;
+  margin-top: 3px;
+  font-style: italic;
 }
 .sender{
-    display: block;
-    margin-bottom: 4px;
+  display: block;
+  margin-bottom: 4px;
 }
 .message-form{
-    position: absolute;
-    bottom: 3px;
-    width: 90%;
-    margin-bottom: 5px;
+  position: absolute;
+  bottom: 3px;
+  width: 90%;
+  margin-bottom: 5px;
 }
 .message-input{
-    color: white;
-    background-color: #36393F;
-    width: 87%;
-    outline: none;
-    border: none;
-    border-radius: 10px 0px 0px 10px;
-    padding: 5px;
-    font-size: 18px;
+  color: white;
+  background-color: #36393F;
+  height: 38px;
+  width: 80%;
+  outline: none;
+  border: none;
+  padding: 5px;
+  font-size: 18px;
 }
 .send-message{
-    position: absolute;
-    width: 100px;
-    border-radius: 0px 10px 10px 0px;
+  position: absolute;
+  width: 100px;
+  border-radius: 0px 10px 10px 0px;
+  height: 38px;
 
 }
+.canvas-message{
+position: relative;
+left:8px;
+bottom: 3px;
+width: 50px;
+border-radius: 10px 0px 0px 10px;
+height: 38px;
+}
 .jumbotron-chat, .username-input, .message-right, .message-left {
-  font-size: 1rem; 
+font-size: 1rem; 
 }
 
 
 @media screen and (max-width: 768px) {
-  .jumbotron-chat {
-      width: 80%; 
-      left: 10%; 
-  }
+.jumbotron-chat {
+    width: 80%; 
+    left: 10%; 
+}
 
-  .title {
-
-      left: 20%;
-      font-size: 1.2rem; 
-  }
+.title {
+    
+    left: 20%;
+    font-size: 1.2rem; 
+}
 
 
 }
 
 @media screen and (max-width: 600px) {
-  .jumbotron-chat {
-      width: 90%;
-      left: 5%;
-  }
+.jumbotron-chat {
+    width: 90%;
+    left: 5%;
+}
 
 
 }
 #user-count{
-    position: absolute;
-    right: 10px;
-    font-size: small;
+  position: absolute;
+  right: 10px;
+  font-size: small;
 }
 .title{
-  position:fixed;
-  top: 50px;
-  left: 41%;
-  color: white;
-  margin-top: 50px;
-  
+position:fixed;
+top: 50px;
+left: 41%;
+color: white;
+margin-top: 50px;
+text-shadow: 0 0 0 transparent;
+transition: text-shadow 0.3s ease-in-out; 
+
+}
+.title:hover{
+text-shadow: 0 0 3px #8093ff, 10px 10px 24px #b60000;
 }
 
 .music-form{
-  position: fixed;
-  top: 150px;
-  left:40px;
-  margin-top: 20px;
-  margin-left: 30px;
-  z-index: 30;
+position: fixed;
+top: 150px;
+left:10px;
+margin-top: 20px;
+margin-left: 30px;
+z-index: 30;
 
-  
+
 }
 .music-form > fieldset{
-  color: rgb(255, 255, 255);
-  text-align: center;
+color: rgb(255, 255, 255);
+text-align: center;
 }
 
 
 .music-form .youtube-text, 
 .music-form .play-button {
-    height: 40px;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    vertical-align: middle;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
 }
 .music-form .youtube-text{
-  width: 200px;
+width: 200px;
 }
 .music-form .play-button {
-  width: 100px;
+width: 100px;
 }
 
 .menu {
-  
-  margin-top: 20px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-  display: block;
-  cursor: pointer;
-  pointer-events: none;
-  position: absolute;
-  left: 6px;
+
+margin-top: 20px;
+text-transform: uppercase;
+color: rgba(255, 255, 255, 0.8);
+display: block;
+cursor: pointer;
+pointer-events: none;
+position: absolute;
+left: 6px;
 
 }
 .menu:hover {
-  pointer-events: all;
+pointer-events: all;
 }
 .label {
-  display: inline-block;
-  cursor: pointer;
-  pointer-events: all;
+display: inline-block;
+cursor: pointer;
+pointer-events: all;
 }
 .spacer {
-  display: block;
-  width: 120px;
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  position: relative;
+display: block;
+width: 120px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 20px;
+cursor: pointer;
+position: relative;
 }
 .spacer:before {
-  content: "";
-  position: absolute;
-  border-bottom: 1px solid #ffffff;
-  height: 1px;
-  width: 0%;
-  transition: width 0.25s ease;
-  transition-delay: 0.7s;
+content: "";
+position: absolute;
+border-bottom: 1px solid #ffffff;
+height: 1px;
+width: 0%;
+transition: width 0.25s ease;
+transition-delay: 0.7s;
 }
 .item {
-  position: relative;
-  display: inline-block;
-  margin-right: 30px;
-  left: 20px;
-  top: 10px;
-  opacity: 0;
-  transition: opacity 0.5s ease, top 0.5s ease;
-  transition-delay: 0;
+position: relative;
+display: inline-block;
+margin-right: 30px;
+left: 20px;
+top: 10px;
+opacity: 0;
+transition: opacity 0.5s ease, top 0.5s ease;
+transition-delay: 0;
 }
 span {
-  transition: color 0.5s ease;
+transition: color 0.5s ease;
 }
 .item:hover span {
-  color: #502570;
+color: #502570;
 }
 .menu:hover .spacer:before {
-  width: 100%;
-  transition-delay: 0s;
+width: 100%;
+transition-delay: 0s;
 }
 .menu:hover .item {
-  opacity: 1;
-  top: 0px;
+opacity: 1;
+top: 0px;
 }
 .item:nth-child(1) {
-  transition-delay: 0.45s;
+transition-delay: 0.45s;
 
 }
 .item:nth-child(2) {
-  transition-delay: 0.4s;
+transition-delay: 0.4s;
 }
 .item:nth-child(3) {
-  transition-delay: 0.35s;
+transition-delay: 0.35s;
 }
 .item:nth-child(4) {
-  transition-delay: 0.3s;
+transition-delay: 0.3s;
 }
 .item:nth-child(5) {
-  transition-delay: 0.25s;
+transition-delay: 0.25s;
 }
 .item:nth-child(6) {
-  transition-delay: 0.2s;
+transition-delay: 0.2s;
 }
 .item:nth-child(7) {
-  transition-delay: 0.15s;
+transition-delay: 0.15s;
 }
 .item:nth-child(8) {
-  transition-delay: 0.1s;
+transition-delay: 0.1s;
 }
 .item:nth-child(9) {
-  transition-delay: 0.05s;
+transition-delay: 0.05s;
 }
 .item:nth-child(10) {
-  transition-delay: 0s;
+transition-delay: 0s;
 }
 .menu:hover .item:nth-child(1) {
-  transition-delay: 0.25s;
+transition-delay: 0.25s;
 }
 .menu:hover .item:nth-child(2) {
-  transition-delay: 0.3s;
+transition-delay: 0.3s;
 }
 .menu:hover .item:nth-child(3) {
-  transition-delay: 0.35s;
+transition-delay: 0.35s;
 }
 .menu:hover .item:nth-child(4) {
-  transition-delay: 0.4s;
+transition-delay: 0.4s;
 }
 .menu:hover .item:nth-child(5) {
-  transition-delay: 0.45s;
+transition-delay: 0.45s;
 }
 .menu:hover .item:nth-child(6) {
-  transition-delay: 0.5s;
+transition-delay: 0.5s;
 }
 .menu:hover .item:nth-child(7) {
-  transition-delay: 0.55s;
+transition-delay: 0.55s;
 }
 .menu:hover .item:nth-child(8) {
-  transition-delay: 0.6s;
+transition-delay: 0.6s;
 }
 .menu:hover .item:nth-child(9) {
-  transition-delay: 0.65s;
+transition-delay: 0.65s;
 }
 .menu:hover .item:nth-child(10) {
-  transition-delay: 0.7s;
+transition-delay: 0.7s;
 }
 .settings-button{
-  width: 50px;
-  border-radius: 30px;
+width: 50px;
+border-radius: 30px;
 }
+
+
+#draggableDiv {
+cursor:grab;
+}
+
+.drawingCanvas{
+position: fixed;
+z-index: 100;
+left: 420px;
+top: 300px;
+
+}
+
+.dc_styling{
+border: 3px solid #36393F;
+border-radius: 10px;
+}
+.dragHandle:hover{
+}
+

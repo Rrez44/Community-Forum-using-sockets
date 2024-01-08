@@ -77,7 +77,7 @@ display: grid;
 align-content: center;
 }
 .fronti {
-  background-color:#e7d1b5;
+  background-color:#171717;
   background-image: url(images/card.jpg);
   background-attachment: scroll;
   background-repeat: no-repeat;
@@ -176,7 +176,7 @@ h3:hover span:nth-child(even){
   justify-content: space-between;
   order:3;
   z-index: 3000;
-  background-color: #333333;
+  background-color: #896432;
 }
 .karta {
   flex-basis:60%;
@@ -832,5 +832,6 @@ column-count:2;
   font-weight: 400;
   color:black;
 }
+
 
 
