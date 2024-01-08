@@ -27,10 +27,10 @@
                       <a class="nav-link" href="/chat"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                   </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="/quiz"><i class="far fa-clone"></i>Quiz Prep</a>
+                      <a class="nav-link" href="/prep"><i class="far fa-clone"></i>Quiz Prep</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/shop"><i class="fa-solid fa-barcode"></i>Gift-Shop</a>
+                      <a class="nav-link" href="/products"><i class="fa-solid fa-barcode"></i>Gift-Shop</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="/contact"><i class="far fa-chart-bar"></i>Contact Us</a>
@@ -49,7 +49,7 @@
         <section>
             <div id="icons">
                 <i class="fas fa-th"></i>
-                <a href="TableView.html" title="Table View  " style="text-shadow: none;"><i class="fas fa-list"></i></a>
+                <a href="/TableView" title="Table View  " style="text-shadow: none;"><i class="fas fa-list"></i></a>
             </div>
             <div id="Bags">
                 <div>
@@ -89,7 +89,7 @@
 
         <div id="bigDiv" style="z-index: 9999;">
             <div class="form-popup" id="myForm" style="border-radius: 15px;">
-                <form action="products.html" class="form-container" onsubmit="showAlert(event)">
+                <form action="/products" class="form-container" onsubmit="showAlert(event)">
                     <h4>Contact information</h4>
                     <input type="email" id="email" placeholder="Email" name="email" autofocus>
                     <h4>Shipping address</h4>
@@ -189,7 +189,7 @@
         function showAlert(event) {
             event.preventDefault();
             alert("Porosia është bërë me sukses!");
-            window.location.href = "products.html";
+            window.location.href = "/products";
         }
         </script>
  
