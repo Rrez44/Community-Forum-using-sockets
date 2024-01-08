@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="Products.css">
-    <link rel="stylesheet" type="text/css" href="SingleProduct.css">
+    <link rel="stylesheet" type="text/css" href="/public/styling/Products.css">
+    <link rel="stylesheet" type="text/css" href="/public/styling/SingleProduct.css">
     <title>E-Shopping</title>
-    <link rel="shortcut icon" type="image/png" href="../images/3d.png">
-    <script src="form_validation.js"></script>
-    <script type="text/javascript" src="jquery-3.5.1.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/public/images/3d.png">
+    <script src="/public/scripts/form_validation.js"></script>
+    <script type="text/javascript" src="/public/scripts/jquery-3.5.1.js"></script>
     <script src="https://kit.fontawesome.com/096e4d997b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- <link rel="stylesheet" href="navbar.css">
-  
-
-    
+    <link rel="stylesheet" href="/public/styling/navbar.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  
 </head>
@@ -130,7 +127,7 @@
             </div>
         </div>
     </section>
-    <script type="text/javascript" src="Products.js"></script>
+    <script type="text/javascript" src="/public/scripts/Products.js"></script>
     <div class="custom-shape-divider-top-1610755808">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,0V6c0,21.6,291,111.46,741,110.26,445.39,3.6,459-88.3,459-110.26V0Z" class="shape-fill"></path>
@@ -148,14 +145,46 @@
     </footer>
     <script src="https://kit.fontawesome.com/74cd7f5a15.js" crossorigin="anonymous"></script>
     
-    <script>
-        $(document).ready(function() {
-            $('#user-input').click(function(e) {
-                e.preventDefault();
-                $("#logout_btn").fadeToggle(200)
+   <script>
+            $('#logout_btn').hide()
+            let clicked = 0;
+            $(document).ready(function() {
+                $('#user-input').click(function(e) {
+                    e.preventDefault();
+                    if(clicked === 0){
+                    $("#logout_btn").slideDown(400)
+                    clicked = 1;
+                    }
+                    else{
+                      $("#logout_btn").slideUp(200)
+                      clicked =0;
+                    }
+      
+                });
             });
+            </script>
+            <script>
+              $(document).ready(function () {
+          $("#logout_btn").click(function (event) {
+            event.preventDefault();
+      
+      
+            $.ajax({
+              type: "POST",
+              url: "/logout",
+              success: function (data) {
+      
+                console.log('Logged out successfully');
+                window.location.href = '/login';
+              },
+              error: function (error) {
+      
+                console.error('Error occurred during logout:', error);
+              },
+            });
+          });
         });
-        </script>
+            </script>
         <script>
         function showAlert(event) {
             event.preventDefault();
