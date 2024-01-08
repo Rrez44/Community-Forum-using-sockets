@@ -74,56 +74,56 @@ body {
 }
 
 .elektronika {
-  background-image: url("./Images/transistor.png.png");
+  background-image: url("images/transistor.png.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .ueb {
-  background-image: url("./Images/ueb.png");
+  background-image: url("images/ueb.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .matematika {
-  background-image: url("./Images/matematik.png");
+  background-image: url("images/matematik.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .arkitektur {
-  background-image: url("./Images/arkitektur.png");
+  background-image: url("images/arkitektur.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .OOP {
-  background-image: url("./Images/programim.jpg");
+  background-image: url("images/programim.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .qarqe {
-  background-image: url("./Images/qarqedixhitale.jpg");
+  background-image: url("images/qarqedixhitale.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .qarqe.elektrike {
-  background-image: url("./Images/qarqeelektrike.png");
+  background-image: url("images/qarqeelektrike.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .fizike1 {
-  background-image: url("./Images/physics.png");
+  background-image: url("images/physics.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
