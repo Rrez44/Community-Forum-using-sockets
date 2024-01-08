@@ -1,4 +1,4 @@
-const socket = io.connect('http://localhost:4000');
+const socket = io.connect();
 let username = '';
 function getDate(currentDate = new Date()) {
     const year = currentDate.getFullYear();
@@ -110,7 +110,7 @@ function extractImageUrl(text) {
 /////////////////////////////////// youtube player code //////////////////////////////////////
 var player; 
 $(document).ready(function() {
-    const socket = io.connect('http://localhost:4000');
+    const socket = io.connect();
 
 
     function initPlayer(videoId) {
