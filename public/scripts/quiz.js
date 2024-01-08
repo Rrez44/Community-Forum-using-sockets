@@ -1062,6 +1062,7 @@ const quizzes = {
     ],
   },
 };
+
 var userAnswers = [];
 
 function loadQuizContent(selectedQuizId) {
@@ -1079,21 +1080,49 @@ function loadQuizContent(selectedQuizId) {
       "</div>";
     questionHTML +=
       "<div class='quiz-question'>" + question.question + "</div>";
-
+  
     questionHTML += "<div class='quiz-options'>";
     question.options.forEach(function (option, i) {
       questionHTML += `
-                <label>
-                    <input type="radio" name="answer" value="${option}">
-                    ${option}
-                </label>`;
+              <label>
+                  <input type="radio" name="answer" value="${option}" ${
+        userAnswers[index] === option ? "checked" : ""
+      }>
+                  ${option}
+              </label>`;
     });
     questionHTML += "</div>";
-
-    questionHTML +=
-      "<button class='next-button' onclick='nextQuestion()'>Next</button>";
+  
+    // "Back" button
+    if (index > 0) {
+      questionHTML +=
+        "<button class='back-button' onclick='backToPreviousQuestion(" +
+        index +
+        ")'>Back</button>";
+    }
+  
+    // "Next" button
+    if (index < quizzes[quizId].questions.length - 1) {
+      questionHTML +=
+        "<button class='next-button' onclick='nextQuestion()'>Next</button>";
+    }
+  
+    // "Submit" button (for the last question)
+    if (index === quizzes[quizId].questions.length - 1) {
+      questionHTML +=
+        "<button class='submit-button' onclick='submitQuiz()'>Submit</button>";
+    }
+  
     quizContent.innerHTML = questionHTML;
   }
+  
+
+  window.backToPreviousQuestion = function (currentIndex) {
+    if (currentIndex > 0) {
+      currentQuestion = currentIndex - 1;
+      showQuestion(currentQuestion);
+    }
+  };
 
   window.nextQuestion = function () {
     var selectedOption = document.querySelector('input[name="answer"]:checked');
@@ -1102,6 +1131,16 @@ function loadQuizContent(selectedQuizId) {
     if (currentQuestion < quizzes[quizId].questions.length - 1) {
       currentQuestion++;
       showQuestion(currentQuestion);
+    } else {
+      quizContent.innerHTML = "<h2>End of the quiz!</h2>";
+      checkAnswers();
+    }
+  };
+
+  window.submitQuiz = function () {
+    var unansweredQuestions = userAnswers.some((answer) => answer === "");
+    if (unansweredQuestions) {
+      alert("Please answer all questions before submitting.");
     } else {
       quizContent.innerHTML = "<h2>End of the quiz!</h2>";
       checkAnswers();
@@ -1140,54 +1179,3 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
-
-const body = document.querySelector("body"),
-  nav = document.querySelector("nav"),
-  modeToggle = document.querySelector(".dark-light");
-
-let getMode = localStorage.getItem("mode");
-if (getMode && getMode === "dark-mode") {
-  body.classList.add("dark");
-}
-
-modeToggle.addEventListener("click", () => {
-  modeToggle.classList.toggle("active");
-  body.classList.toggle("dark");
-
-  if (!body.classList.contains("dark")) {
-    localStorage.setItem("mode", "light-mode");
-  } else {
-    localStorage.setItem("mode", "dark-mode");
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const infoBtn = document.getElementById("infoBtn");
-
-  /* function getCurrentSection() {
-    const sections = document.querySelectorAll(".section");
-    for (const section of sections) {
-      if (section.style.display !== "none") {
-        return section.querySelector("h2").textContent;
-      }
-    }
-    return "Unknown Section";
-  }
-
-  function showInfo(info) {
-    alert("You are in " + info);
-  }*/ $(document).ready(function () {
-    $("#dialog").dialog({
-      autoOpen: false,
-      modal: true,
-    });
-
-    $("#infoBtn").on("click", function () {
-      $("#dialog").dialog("open");
-    });
-  });
-});
-function toggleDropdown() {
-  var dropdownContent = document.querySelector('.dropdown-content');
-  dropdownContent.style.display = (dropdownContent.style.display === 'block') ? 'none' : 'block';
-}
