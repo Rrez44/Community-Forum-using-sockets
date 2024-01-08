@@ -2,18 +2,75 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="SingleProduct.css">
+    <link rel="stylesheet" type="text/css" href="/public/SingleProduct.css">
     <title>Single Product</title>
-    <link rel="shortcut icon" type="image/png" href="../images/3d.png">
-    <link rel="stylesheet" type="text/css" href="navigation.css">
+    <link rel="shortcut icon" type="image/png" href="/public/images/3d.png">
 
-    <script type="text/javascript" src="jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="form_validation.js"></script>
+    <script type="text/javascript" src="/public/scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="/public/scripts/form_validation.js"></script>
     <script src="https://kit.fontawesome.com/096e4d997b.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/public/styling/navbar.css">
+
+    
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
 </head>
 
 <body onload="changeBackground()">
-   
+    <div id="navbar-container" style="font-family: Font Awesome 5 Free; z-index: 10;">
+        <nav class="navbar navbar-expand-custom navbar-mainbg">
+          <a class="navbar-brand navbar-logo" href="/homepage">Fiek Community</a>
+          <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars text-white"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/chat"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="/prep"><i class="far fa-clone"></i>Quiz Prep</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/products"><i class="fa-solid fa-barcode"></i>Gift-Shop</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/contact"><i class="far fa-chart-bar"></i>Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link"  id="user-input" href=""><i class="far fa-address-book"></i>User</a>
+                  </li>
+                </ul>
+            </div>
+        </nav>
+          <button id="logout_btn" class="btn btn-dark logout_btn">Log Out</button>
+        </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const infoBtn = document.getElementById("infoBtn");
+  
+   $(document).ready(function () {
+      $("#dialog").dialog({
+        autoOpen: false,
+        modal: true,
+      });
+  
+      $("#infoBtn").on("click", function () {
+        $("#dialog").dialog("open");
+      });
+    });
+  });
+  
+  function toggleDropdown() {
+    var dropdownContent = document.querySelector(".dropdown-content");
+    dropdownContent.style.display =
+      dropdownContent.style.display === "block" ? "none" : "block";
+  }
+  </script>
 
     <div class="flex-container">
         <div id="img-containter">
@@ -32,24 +89,32 @@
 
     <div id="bigDiv">
         <div class="form-popup" id="myForm" style="border-radius: 15px;">
-            <form action="/action_page.php" class="form-container">
+            <form action="/products"  class="form-container" onsubmit="showAlert(event)">
                 <h4>Contact information</h4>
-                <input type="email" id="email" placeholder="Email" name="email">
+                <input type="email" id="email" placeholder="Email" name="email" autofocus>
                 <h4>Shipping address</h4>
                 <input type="text" id="name" placeholder="Name" name="name">
                 <input type="text" id="surname" placeholder="Surname" name="surname">
                 <input type="text" id="adress" placeholder="Adress" name="Adress">
                 <input type="text" id="pcode" placeholder="Postal Code" name="Postal Code">
                 <input type="text" id="_city" placeholder="City" name="city">
+                <datalist id="balkan_states" onchange="change_placeholder(this)">
+                    <option value="Albania">
+                    <option value="Kosovo">
+                    <option value="Montenegro">
+                    <option value="North Macedonia">
+                    <option value="Serbia">
+                </datalist>
+                <input class="balkan-state-input" type="text" id="balkan-state-input" list="balkan_states" autocomplete="off" placeholder="Select your country...">
                 <select id="mySelect" onchange="change_placeholder(this)">
-                    <option value="">Select your country...</option>
+                    <option value="">Select your country number...</option>
                     <option value="Albania">Albania</option>
                     <option value="Kosovo">Kosovo</option>
                     <option value="Montenegro">Montenegro</option>
                     <option value="North Macedonia">North Macedonia</option>
                     <option value="Serbia">Serbia</option>
                 </select>
-                <input type="tel" id="phone" name="phone" placeholder="Phone number">
+                <input type="tel" id="phone" name="phone" placeholder="Phone number" >
                 <input type="checkbox">
                 <p style="color:#201c1c">Save this information for next time</p>
                 </br>
@@ -71,7 +136,18 @@
             <button id="checkout" onclick="openForm()">CHECKOUT</button>
         </div>
     </div>
-
+    <footer>
+   
+        <div style="background-color: #181818;color:rgb(189, 189, 189); height: 25px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>
+       
+    </footer>
+<script>
+function showAlert(event) {
+    event.preventDefault();
+    alert("Porosia është bërë me sukses!");
+    window.location.href = "products.html";
+}
+</script>
     <script>
         var product = JSON.parse(localStorage.getItem('prod'));
 
@@ -199,13 +275,16 @@
 
     </script>
      <script src="https://kit.fontawesome.com/74cd7f5a15.js" crossorigin="anonymous"></script>
-      <script>
-        $(".navT").on("click", function() {
-            $(this).toggleClass("active");
-            $("#menu").toggleClass("open");
-            $(".content").toggleClass("shift");
+      
+    <script>
+        $(document).ready(function() {
+            $('#user-input').click(function(e) {
+                e.preventDefault();
+                $("#logout_btn").fadeToggle(200)
+            });
         });
-    </script>
+        </script>
+        
     
 </body>
 
