@@ -13,7 +13,53 @@ body {
   font-weight: 300;
   background: #FDFDFD;
 }
+#name-err{
+  color: red;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-top: 0px;
+  margin-bottom: 24px;
+  display: none;
+}
+input,
+textarea {
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  width: calc(100% - 20px); /* Adjust the width as needed */
+  height: 20px; /* Increase the height to make it slightly higher */
+  border: none;
+  background-color: transparent;
+  margin-bottom: 12px;
+}
+textarea {
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  width: calc(100% - 20px);
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 25px;
+  color: #FAFAFA;
+}
+.group textarea ~ label {
+  color: white;
+}
+#send-message-btn {
+  background-color: #da9a25; /* Yellow-orange color */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
 
+/* Hover effect for the button */
+#send-message-btn:hover {
+  background-color: #edd75a; /* Lighter shade on hover */
+}
 .container {
   width: 100%;
   height: 100%;
@@ -23,18 +69,323 @@ body {
   
 
 }
-.darken-iframe {
-	filter: brightness(20%);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+html {
+  width: 100%;
+  height: 100%;
 }
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  background: #FDFDFD;
+}
+#name-err{
+  color: red;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin-top: 0px;
+  margin-bottom: 24px;
+  display: none;
+}
+input,
+textarea {
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  width: calc(100% - 20px); /* Adjust the width as needed */
+  height: 20px; /* Increase the height to make it slightly higher */
+  border: none;
+  background-color: transparent;
+  margin-bottom: 12px;
+}
+textarea {
+  font-size: 18px;
+  padding: 10px;
+  display: block;
+  width: calc(100% - 20px);
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  margin-bottom: 25px;
+  color: #FAFAFA;
+}
+.group textarea ~ label {
+  color: white;
+}
+#send-message-btn {
+  background-color: #da9a25; /* Yellow-orange color */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Hover effect for the button */
+#send-message-btn:hover {
+  background-color: #edd75a; /* Lighter shade on hover */
+}
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease;
+  
+
+}
+/* Remove the black overlay */
 .iframe-overlay {
+  display: none; /* Hide the black overlay */
+}
+
+body.menu-active .container {
+  transform: scale(0.9);
+}
+
+.container .inner {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.container .inner .panel {
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  width: 60%;
+  float: left;
+  transform: skew(-20deg);
+}
+
+.container .inner .panel.panel-left {
+  margin-left: -10%;
+}
+
+.container .inner .panel .panel-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) skew(20deg);
+}
+
+.container .inner .panel.panel-left .panel-content .image-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  opacity: 0.95;
+  background-image: url('http://uplusion23.net/images/RickGenestSm.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.container .inner .panel.panel-right .panel-content .form {
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  width: 300px;
+  min-height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-25%);
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  background: rgba(27, 27, 27, 0.9); /* Darker background color */
+  padding: 20px; /* Add padding for a more comfortable layout */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add box shadow for depth */
+}
+.container .inner .panel.panel-right .panel-content .form h1 {
+  display: block;
+  margin: 0 0 25px 0;
+  color: #FAFAFA;
+  font-weight: 200;
+  font-size: 20px; /* Slightly larger font size */
+}
+
+.group {
+  position: relative;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+input {
+  font-size: 10px;
+  height: 15px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 300px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #B1B1B1;
+  color: #B1B1B1;
+  background: rgba(0,0,0,0);
+  opacity: 0.5;
+  transition: 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  opacity: 1;
+}
+
+label {
+  color: #999;
+  font-size: 14px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 10px;
+  top: -10px;
+  transition: 0.2s ease all;
+}
+/* active state */
+input:focus ~ label,
+textarea:focus ~ label,
+input:valid ~ label,
+textarea:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%; 
+  width: 100px; 
+  top: 25%; 
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from { background:#B1B1B1; }
+  to  { width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+  from { background:#B1B1B1; }
+  to  { width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+  from { background:#B1B1B1; }
+  to  { width:0; background:transparent; }
+}
+
+a.send-btn {
+  float: right;
+  color: #B1B1B1;
+  transition: 0.2s ease;
+  width:150px;
+  height:45px;
+}
+
+a.send-btn:hover {
+  color: #FAFAFA;
+  cursor: pointer;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  transition: all 0.33s ease;
+}
+
+.menu::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-  pointer-events: none; /* Allows interaction with the iframe underneath */
+  background: rgba(240,240,240,0.0);
+  
+  transition: all 0.45s ease;
 }
+
+body.menu-active .menu {
+  left: 0;
+}
+
+body.menu-active .menu::before {
+  background: rgba(240,240,240,0.9);
+}
+
+
+.google-map {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  /* Stili shtesë për të siguruar që këndi i hartës është i qasshëm */
+  .google-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #name-r {
+    color: red;
+    font-size: 10px;
+    float:right;
+  }
+  #email-r {
+    color: red;
+    font-size: 10px;
+    float:right;
+  }
+  #address-r {
+    color: red;
+    font-size: 10px;
+    float:right;
+  }
+  #message-r {
+    color: red;
+    font-size: 10px;
+    float:right;
+  }
+ 
+ 
+
+
+  
+  
+
 
 body.menu-active .container {
   transform: scale(0.9);
@@ -87,36 +438,42 @@ body.menu-active .container {
 
 .container .inner .panel.panel-right {
   margin-right: -10%;
-  background: #1B1B1B;
 }
 
 .container .inner .panel.panel-right .panel-content .form {
   display: block;
   position: absolute;
   margin: 0 auto;
-  width: 300px;
-  min-height: 400px;
-  top: 50%;
+  width: 400px;
+  min-height: 500px;
+  top: 20%;
   left: 50%;
-  transform: translateX(-50%) translateY(-25%);
+  border-radius: 10px; /* Add border-radius for rounded corners */
+  background: rgba(27, 27, 27, 1); /* Darker background color */
+  padding: 40px; /* Add padding for a more comfortable layout */
+  padding-top: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add box shadow for depth */
 }
-
+.container .inner .panel.panel-right .panel-content .form .inside{
+  padding: 20px; 
+}
 .container .inner .panel.panel-right .panel-content .form h1 {
   display: block;
-  margin: 0 0 45px 0;
-  color: #B1B1B1;
+  margin: 0 0 25px 0;
+  color: #FAFAFA;
   font-weight: 200;
-  font-size: 18px;
+  font-size: 20px; /* Slightly larger font size */
 }
 
-.group { 
-  position: relative; 
-  margin-bottom: 25px; 
+.group {
+  position: relative;
+  margin-bottom: 25px;
+  width: 100%;
 }
 
 input {
-  font-size: 13px;
-  height: 25px;
+  font-size: 10px;
+  height: 15px;
   padding: 10px 10px 10px 5px;
   display: block;
   width: 300px;
@@ -135,25 +492,23 @@ input:focus {
 }
 
 label {
-  color: #B1B1B1; 
-  font-size: 13px;
+  color: #999;
+  font-size: 14px;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
-  left: 5px;
-  top: 15px;
-  opacity: 0.5;
-  transition: 0.2s ease all; 
-  -moz-transition: 0.2s ease all; 
-  -webkit-transition: 0.2s ease all;
-}
-
-/* active state */
-input:focus ~ label, input:valid ~ label 		{
+  left: 10px;
   top: -10px;
-  font-size: 12px;
-  color: #B1B1B1;
-  opacity: 1;
+  transition: 0.2s ease all;
+}
+/* active state */
+input:focus ~ label,
+textarea:focus ~ label,
+input:valid ~ label,
+textarea:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264AE;
 }
 
 .highlight {
@@ -176,15 +531,15 @@ input:focus ~ .highlight {
 /* ANIMATIONS ================ */
 @-webkit-keyframes inputHighlighter {
   from { background:#B1B1B1; }
-  to 	{ width:0; background:transparent; }
+  to  { width:0; background:transparent; }
 }
 @-moz-keyframes inputHighlighter {
   from { background:#B1B1B1; }
-  to 	{ width:0; background:transparent; }
+  to  { width:0; background:transparent; }
 }
 @keyframes inputHighlighter {
   from { background:#B1B1B1; }
-  to 	{ width:0; background:transparent; }
+  to  { width:0; background:transparent; }
 }
 
 a.send-btn {
@@ -251,3 +606,23 @@ body.menu-active .menu::before {
     height: 100%;
   }
   
+  #name-r {
+    color: red;
+    font-size: 10px;
+    float:right;
+  }
+  #email-r {
+    color: red;
+    font-size: 10px;
+    float:right;
+  }
+  #address-r {
+    color: red;
+    font-size: 10px;
+    float:right;
+  }
+  #message-r {
+    color: red;
+    font-size: 10px;
+    float:right;
+  }

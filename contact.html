@@ -73,28 +73,42 @@
             <div class="panel-content">
               <div class="form">
                 <h1>Leave a comment</h1>
+                <div class="inside"></div>
                 <div class="group">      
-                  <input type="text" required>
-                  <span class="highlight"></span>
+                  <input type="text" id="contact-name" onkeyup="validationName()" required>
+                  <span id="name-r"></span>
                   <label>Your name</label>
                 </div>
                 <div class="group">      
-                  <input type="text" required>
-                  <span class="highlight"></span>
+                  <input type="text" id="contact-email" onkeyup="validationEmail()" required>
+                  <span id="email-r"></span>
                   <label>Your email</label>
                 </div>
-                <a class="send-btn">Send</a>
+                <div class="group">      
+                  <input type="text" id="contact-address" onkeyup="validationAddress()" required>
+                  <span id="address-r"></span>
+                  <label>Your address</label>
+                </div>
+                <div class="group">      
+                  <textarea name="message" placeholder="Type your message here..." rows="4" required></textarea>
+                  <span id="message-r"></span>
+                  <label>Your message</label>
+                </div> 
+                <a id="send-message-btn" class="send-btn" onclick="validateForm()">Send Message</a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+            </div>
+          </div>          
+    </div>
+</div>
       <div class="menu"></div>
       <footer>
    
         <div style="background-color: #181818;color:rgb(189, 189, 189); height: 20px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center; font-size: small;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>
        
     </footer>
+    <!-- Include the script file -->
+    <script src="validate_contactus.js"></script>
       <script>
         $(document).ready(function() {
             $('#user-input').click(function(e) {
@@ -103,5 +117,14 @@
             });
         });
         </script>
+         <script>
+          document.getElementById("send-message-btn").addEventListener("click", function() {
+              // Replace this alert with your desired functionality to handle the message submission
+              alert("Your message has been sent!");
+          });
+      </script>
+      <!-- <script src="script.js"></script> -->
+  
 </body>
 </html>
+
