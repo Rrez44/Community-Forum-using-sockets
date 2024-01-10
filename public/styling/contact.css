@@ -177,7 +177,6 @@ body.menu-active .container {
   height: 100%;
   left: 50%;
   top: 50%;
-  transform: translateX(-50%) translateY(-50%) skew(20deg);
 }
 
 .container .inner .panel.panel-left .panel-content .image-background {
@@ -444,15 +443,15 @@ body.menu-active .container {
   display: block;
   position: absolute;
   margin: 0 auto;
-  width: 400px;
-  min-height: 500px;
-  top: 20%;
+  width: 410px;
+  min-height: 400px;
+  top: 30%;
   left: 50%;
-  border-radius: 10px; /* Add border-radius for rounded corners */
-  background: rgba(27, 27, 27, 1); /* Darker background color */
-  padding: 40px; /* Add padding for a more comfortable layout */
+  border-radius: 20px; 
+  background: rgba(27, 27, 27, 1);
+  padding: 30px; 
   padding-top: 50px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add box shadow for depth */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
 }
 .container .inner .panel.panel-right .panel-content .form .inside{
   padding: 20px; 
