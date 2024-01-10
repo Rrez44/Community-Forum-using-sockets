@@ -23,8 +23,8 @@ function changeBackground(){
         document.body.style.color="white";
     }
     else {
-        document.body.style.backgroundColor = "#FAFAFA";
-                document.body.style.color="white";
+        document.body.style.backgroundColor = "#212121";
+        document.body.style.color="white";
     }
     
 }
