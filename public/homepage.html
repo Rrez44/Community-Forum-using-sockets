@@ -6,7 +6,8 @@
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
         <script src="scripts/smoothScroll.js"></script>
-        
+        <script src="https://kit.fontawesome.com/74cd7f5a15.js" crossorigin="anonymous"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
@@ -73,7 +74,7 @@
             <body>
                 <div id="navbar-container" style="z-index: 600000;">
                     <nav class="navbar navbar-expand-custom navbar-mainbg">
-                      <a class="navbar-brand navbar-logo" href="/homepage">Fiek Community</a>
+                      <a class="navbar-brand navbar-logo" href="/home">Fiek Community</a>
                       <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <i class="fas fa-bars text-white"></i>
                       </button>
@@ -140,7 +141,7 @@
                 <div class="teksti" style="font-family:'Poppins', sans-serif; font-size: 25px; font-weight: normal;">FIEK Community Empowerment</div>
             </div>
         </div>
-        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#" fill-opacity="1" d="M0,96L120,85.3C240,75,480,53,720,53.3C960,53,1200,75,1320,85.3L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+        <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#333333" fill-opacity="1" d="M0,96L120,85.3C240,75,480,53,720,53.3C960,53,1200,75,1320,85.3L1440,96L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
             </div>
         </section>
 
@@ -189,11 +190,13 @@
                          to all small-scale enterprises. Rest assured, your products will be showcased and marketed to a wide 
                          audience within the FIEK community.
                             </div>
-                                <video class="video1" width="640" height="360" controls>
-                                    <source src="images/video.mp4" type="video/mp4">
-                                    <source src="images/video.ogg" type="video/ogg">
-                                    Your browser does not support the video tag.
-                                </video>
+                            <video id="video1" width="640" height="360" autoplay loop style="position: relative; bottom: 100px; left: 20px;">
+                                <source src="videos/c2.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            
+                            
+
                         </div>
                         <div class="main-space">
                         
@@ -208,11 +211,11 @@
                 Your browser does not support the audio element.
             </audio>
             <audio id="myAudio2">
-                <source src="images/click3.mp3" type="audio/mpeg">
+                <source src="images/clickk.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
             <audio id="myAudio3">
-                <source src="images/click2.mp3" type="audio/mpeg">
+                <source src="images/clickk.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
             <script>
@@ -534,7 +537,26 @@
           });
         });
             </script>
+
         <script src="scripts/smoothScroll.js"></script>
          
+        <script>
+            function switchVideo() {
+                var video = document.getElementById('video1');
+                var source = video.getElementsByTagName('source')[0]; 
+                var currentSrc = source.getAttribute('src');
+            
+                if (currentSrc.includes('c2.mp4')) {
+                    source.setAttribute('src', 'videos/c1.mp4');
+                } else {
+                    source.setAttribute('src', 'videos/c2.mp4');
+                }
+            
+                video.load(); 
+                video.play(); 
+            }
+            
+            document.getElementById('video1').addEventListener('click', switchVideo);
+            </script>
             </body>
         </html>

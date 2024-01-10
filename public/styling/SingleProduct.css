@@ -60,6 +60,7 @@ background-color: #212121;
 
 #right-div>* {
     margin-bottom: 15px;
+    color: #d3d3d3;
 }
 
 #title {
@@ -161,7 +162,9 @@ background-color: #212121;
     color: white;
     transition: 1s;
 }
-
+#cartList{
+    color: rgb(152, 152, 152);
+}
 #cartList button {
     color: rgba(51, 51, 51, 0.5);
     border: 0px;
@@ -216,7 +219,7 @@ dl dd.inline {
 }
 
 .form-popup h4 {
-    color: #333;
+    color: #d3d3d3;
     font-size: 20px;
     font-weight: 600;
     padding-bottom: 8px;

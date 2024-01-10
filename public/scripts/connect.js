@@ -84,7 +84,7 @@ function appendImageToChat(imageData, username) {
     const messageClass = 'message-left';
 
     const imageHtml = `<li class="${messageClass}">
-        <span class='sender'><i class="fa-solid fa-user"></i> Hyj</span> 
+        <span class='sender'><i class="fa-solid fa-user"></i> Hyjnesha</span> 
         <img src="${imageData}" alt="Image" style="max-width: 200px; max-height: 200px;">
         <span class='datetime'>${datetime}</span>
     </li>`;

@@ -176,7 +176,7 @@ h3:hover span:nth-child(even){
   justify-content: space-between;
   order:3;
   z-index: 3000;
-  background-color: #896432;
+  background-color: #c59a61;
 }
 .karta {
   flex-basis:60%;
