@@ -5,27 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact us</title>
     <link rel="stylesheet" href="styling/contact.css">
-    <script src="scripts/contact.js"></script>
+    <script src="contact.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="styling/navbar.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.3/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/74cd7f5a15.js" crossorigin="anonymous"></script>
-    <script>
-      //// this gets the username and changes the input field 
-      $.get('/getsession', function(data) {
-  if (data.isLoggedIn) {
-      console.log('Logged in as:', data.username);
-      $('#user-input').text(data.username);
-      $('#username-chat').val(data.username);
-  } else {
-      window.location.href = '/login';
-  }
-});
-  </script>
+
 </head>
 <body>
     <div class="menu">
@@ -115,11 +104,11 @@
       <div class="menu"></div>
       <footer>
    
-        <div style="z-index: 50000;background-color: #181818;color:rgb(189, 189, 189); height: 20px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center; font-size: small;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>
+        <div style="background-color: #181818;color:rgb(189, 189, 189); height: 20px; padding-bottom: 5px;position: fixed; bottom: 0px; width: 100%; text-align: center; font-size: small;">&#169; Copyright 2024 Created By FIEK COMMUNITY All Rights Reserved</div>
        
     </footer>
     <!-- Include the script file -->
-    <script src="validate.js"></script>
+    <script src="scripts/contact_validate.js"></script>
       <script>
         $(document).ready(function() {
             $('#user-input').click(function(e) {
@@ -136,35 +125,5 @@
       </script>
       <!-- <script src="script.js"></script> -->
   
-    <script>
-      $(document).ready(function() {
-          $('#user-input').click(function(e) {
-              e.preventDefault();
-              $("#logout_btn").fadeToggle(200)
-          });
-      });
-      </script>
-      <script>
-        $(document).ready(function () {
-    $("#logout_btn").click(function (event) {
-      event.preventDefault();
-
-
-      $.ajax({
-        type: "POST",
-        url: "/logout",
-        success: function (data) {
-
-          console.log('Logged out successfully');
-          window.location.href = '/login';
-        },
-        error: function (error) {
-
-          console.error('Error occurred during logout:', error);
-        },
-      });
-    });
-  });
-      </script>
 </body>
 </html>
