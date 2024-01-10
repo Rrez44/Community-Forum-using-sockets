@@ -84,7 +84,7 @@ function appendImageToChat(imageData, username) {
     const messageClass = 'message-left';
 
     const imageHtml = `<li class="${messageClass}">
-        <span class='sender'><i class="fa-solid fa-user"></i> Hyjnesha</span> 
+        <span class='sender'><i class="fa-solid fa-user"></i> Hyj</span> 
         <img src="${imageData}" alt="Image" style="max-width: 200px; max-height: 200px;">
         <span class='datetime'>${datetime}</span>
     </li>`;
@@ -193,16 +193,7 @@ let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
 
-
-const colorPicker = document.getElementById('colorPicker');
-colorPicker.addEventListener('input', function() {
-    context.strokeStyle = colorPicker.value;
-});
-
-window.onload = function() {
-    context.strokeStyle = colorPicker.value;
-};
-
+// Event listeners for mouse interactions
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", endDrawing);

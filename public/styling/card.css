@@ -1,0 +1,266 @@
+body {
+  background-image: url("background.avif");
+  background-color: #212328;
+}
+
+.margin-0 {
+  margin: 0px;
+  padding: 0px;
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card {
+  width: 210px;
+  height: 270px;
+  box-shadow: 0 10px 10px #00000036;
+  background: #fff;
+  display: flex;
+  border-radius: 20px;
+  justify-content: center;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.card-button {
+  opacity: 0;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  bottom: -40px;
+  border-radius: 12px;
+  width: 180px;
+  height: 30px;
+}
+
+.card::before {
+  letter-spacing: 0.2em;
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  color: rgb(51, 51, 51);
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+.card div {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.212);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.4s;
+  background-color: #fff;
+}
+
+.card:hover div {
+  transform: translateY(-45px);
+}
+
+.card:hover .card-button {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.card-row {
+  margin: 50px;
+}
+
+.elektronika {
+  background-image: url("../images/transistor.png.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ueb {
+  background-image: url("../images/ueb.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.matematika {
+  background-image: url("../images/matematik.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.arkitektur {
+  background-image: url("../images/arkitektur.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.OOP {
+  background-image: url("../images/programim.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.qarqe {
+  background-image: url("../images/qarqedixhitale.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.qarqe.elektrike {
+  background-image: url("../images/qarqeelektrike.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.fizike1 {
+  background-image: url("../images/physics.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.quiz-question {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.quiz-options {
+  margin-bottom: 20px;
+}
+
+.quiz-options label {
+  display: block;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.quiz-options input[type="radio"] {
+  margin-right: 10px;
+}
+
+.next-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 70px;
+  height: 45px;
+}
+.back-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 70px;
+  height: 45px;
+}
+.submit-button {
+  background-color: #009b72;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 90px;
+  height: 45px;
+}
+.next-button:hover {
+  background-color: #45a049;
+}
+
+.modal-header {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+.card-row-2 {
+  margin: 60px;
+}
+
+td {
+  padding: 20px;
+  text-align: left;
+}
+
+table {
+  position: absolute;
+  left: 10%;
+}
+
+.table-margin-top {
+  margin-top: 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

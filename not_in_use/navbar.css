@@ -1,0 +1,93 @@
+/* .nav {
+  background-color: #050203;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 75px;
+  width: 100%;
+  z-index: 1000;
+}
+.nav-links {
+  margin-left: 40px;
+}
+#yx,
+.xy {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 10px;
+  margin-right: 30px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #050203;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #050203;
+  width: 100px;
+  height: 30px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 0px;
+}
+
+.dropdown-content .log {
+  background-color: transparent;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  width: 100px;
+  height: 30px;
+  margin-top: -8px;
+  text-align: center;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #050203;
+}
+
+#infoBtn,
+.infobutton {
+  background-color: transparent;
+  border-color: transparent;
+  text-align: center;
+  border-radius: 80px;
+}
+.fa-info-circle {
+  background-color: transparent;
+  font-size: 22px;
+  color: #ccc;
+}
+.lista {
+  margin-left: 0px;
+}
+
+.xy {
+  color: white;
+  text-decoration: none;
+}
+
+.xy:hover {
+  color: white;
+  text-decoration: none;
+}
+ */

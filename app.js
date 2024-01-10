@@ -124,6 +124,21 @@ app.get('/chat', isAuthenticated,(req, res) => {
 app.get('/home', isAuthenticated,(req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'homepage.html'));
 });
+app.get('/quiz', isAuthenticated,(req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'prep.html'));
+});
+app.get('/contact', isAuthenticated,(req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'contact.html'));
+});
+app.get('/shop', isAuthenticated,(req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'products.html'));
+});
+app.get('/SingleProduct', isAuthenticated,(req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'SingleProduct.html'));
+});
+app.get('/TableView', isAuthenticated,(req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'TableView.html'));
+});
 /////
 app.get('/getsession', (req, res) => {
     if (req.session.username) {

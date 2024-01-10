@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: rgb(214, 214, 214); */
+}
+a { 
+    text-decoration: none;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #e7d1b5;
+}
+
+.section3 {
+    height: 1000px;
+    background: #ebebeb;
+    margin-top: 5px;
+}
+
+/* .container div {
+    background-image: url("ProductsImages/1.jpg");
+    height: 400px;
+    width: 100%;
+  } */
+  .navT {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+#seksioni-produktet {
+    margin-right: 0;
+    margin-left: 150px;
+    display: flex;
+    
+    margin-top:60px;
+    flex-basis: 70%, 30%;
+}
+
+.category {
+    padding: 5px;
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#Bags-h1 {
+    margin-top: 30px;
+}
+
+#Bags {
+    margin-top: 100px;
+    /* border:1px red dashed; */
+}
+
+body {
+    position: relative;
+    /*background:linear-gradient(180deg,#999999,#dad8d8,#999999);*/
+    background-color: #212121;
+}
+
+#yourCart {
+    background-color: rgba(255, 255, 255, 0.4);
+    position: fixed;
+    right: 50px;
+    top: 100px;
+    width: 250px;
+    height: 550px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(116, 114, 114, 0.5);
+    color: #d88e2c;
+}
+
+#bottom {
+  position: absolute;
+  bottom: 20px;
+}
+
+#scrollable {
+  overflow-y: auto;
+  max-height: 380px;
+}
+#bottom h2 {
+    color:#d88e2c;
+}
+#yourCart h2 {
+  padding: 8px;
+}
+
+#checkout {
+    
+    border: 0px;
+    border-radius: 5px;
+    padding: 8px;
+    color: white;
+    font-size: 17px;
+   
+}
+
+#checkout:hover {
+    background-color: #333;
+    color:white;
+    transition: 1s;
+}
+
+.container {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.container tr {
+    border-bottom: 1px solid black;
+}
+
+.container th {
+    text-align: left;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    border-top: 2px solid #d88e2c;
+    border-bottom: 2px solid #d88e2c;
+    padding: 7px;
+    padding-right: 70px;
+}
+
+.container tr th:last-child {
+    padding-right: 40px;
+}
+
+.container tr td:first-child {
+    font-weight: bold;
+}
+
+.container td {
+    font-size: 17px;
+    padding: 5px;
+    padding-right: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: none;
+}
+
+.container tr a:hover td {
+    color: #d88e2c;
+    transition: 0.5s;
+}
+
+.container tr button {
+    margin: 3px;
+    border: 0px;
+    width: 25px;
+    border-radius: 15px;
+    padding: 5px;
+    color: white;
+    font-size: 13px;
+    background-color: #d88e2c;
+}
+
+.container tr button:hover {
+    background-color: #d88e2c;
+    transition: 0.5s ease-in-out;
+}
+
+#icons {
+    float: right;
+    margin-top: 70px;
+}
+
+.fas {
+    font-size: 17px;
+}
+
+.fa-th {
+    color: rgba(218, 206, 206, 0.788);
+}
+
+.fa-list {
+    color: rgba(161, 148, 148, 0.644);
+}
+
+.fa-th:hover {
+    color: rgba(255, 255, 255, 1);
+    transition: 0.5s;
+}
+
+#cartList button {
+    color: rgb(194, 194, 194);
+    border: 0px;
+    padding: 5px;
+    padding-left: 0px;
+    margin-right: 5px;
+    background-color: transparent;
+}
+
+#cartList button:hover {
+    color: #d88e2c;
+    transition: 0.5s;
+}
+
+dl dd {
+  text-align: right;
+}
+
+dl dt {
+  display: inline;
+}
+
+dl dd.inline {
+  float: right;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* .product{
+    border:1px red dashed;
+  }
+  .product-header{
+    border:1px black solid;
+  } */
+
+/* .product-header{
+    border:1px black solid;
+  } */
+
+/* .product {
+    border-radius: 10px;
+  } */
+  .custom-shape-divider-top-1610755808 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1610755808 svg {
+    position: relative;
+    display: block;
+    width: calc(184% + 1.3px);
+    height: 500px;
+}
+
+.custom-shape-divider-top-1610755808 .shape-fill {
+    fill: #212121;
+    opacity: 0.8;
+}
+.custom-shape-divider-bottom-1610755546 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1610755546 svg {
+    position: relative;
+    display: block;
+    width: calc(177% + 1.3px);
+    height: 248px;
+}
+
+.custom-shape-divider-bottom-1610755546 .shape-fill {
+    fill: #212121;
+    opacity: 0.5;
+}
