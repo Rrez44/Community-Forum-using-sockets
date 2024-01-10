@@ -24,6 +24,7 @@ function changeBackground(){
     }
     else {
         document.body.style.backgroundColor = "#212121";
+        document.body.style.color="white";
     }
     
 }
