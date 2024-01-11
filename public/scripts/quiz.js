@@ -258,9 +258,7 @@ const quizzes = {
   },
   matematik: {
     questions: [
-      // Your existing questions about HTML, CSS, and JavaScript
-
-      // Additional questions related to Discrete Mathematics (Matematik3k)
+   
       {
         question: "What is the result of 7 choose 3 (C(7,3))?",
         options: ["35", "21", "42"],
@@ -500,9 +498,6 @@ const quizzes = {
   },
   oop: {
     questions: [
-      // Your existing questions about HTML, CSS, and JavaScript
-
-      // Additional questions related to Object-Oriented Programming (OOP)
       {
         question:
           "What is the primary goal of Object-Oriented Programming (OOP)?",
@@ -805,9 +800,6 @@ const quizzes = {
   },
   qarqeElektrike: {
     questions: [
-      // Your existing questions about HTML, CSS, and JavaScript
-
-      // Additional questions related to Electrical Circuits
       {
         question: "What is Ohm's Law?",
         options: ["V = IR", "P = IV", "I = VR"],
@@ -1066,7 +1058,7 @@ const quizzes = {
 var userAnswers = [];
 
 function loadQuizContent(selectedQuizId) {
-  quizId = selectedQuizId; // Assign selectedQuizId to quizId
+  quizId = selectedQuizId; 
   var currentQuestion = 0;
 
   function showQuestion(index) {
@@ -1093,7 +1085,7 @@ function loadQuizContent(selectedQuizId) {
     });
     questionHTML += "</div>";
   
-    // "Back" button
+  
     if (index > 0) {
       questionHTML +=
         "<button class='back-button' onclick='backToPreviousQuestion(" +
@@ -1101,13 +1093,13 @@ function loadQuizContent(selectedQuizId) {
         ")'>Back</button>";
     }
   
-    // "Next" button
+    
     if (index < quizzes[quizId].questions.length - 1) {
       questionHTML +=
         "<button class='next-button' onclick='nextQuestion()'>Next</button>";
     }
   
-    // "Submit" button (for the last question)
+    
     if (index === quizzes[quizId].questions.length - 1) {
       questionHTML +=
         "<button class='submit-button' onclick='submitQuiz()'>Submit</button>";
