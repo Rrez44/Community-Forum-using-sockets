@@ -1,6 +1,7 @@
 body {
   background-image: url("background.avif");
   background-color: #212328;
+  overflow: hidden;
 }
 
 .margin-0 {
@@ -81,7 +82,7 @@ body {
 }
 
 .ueb {
-  background-image: url("../images/ueb.png");
+  background-image: url("../images/webProgramming.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -116,7 +117,7 @@ body {
 }
 
 .qarqe.elektrike {
-  background-image: url("../images/qarqeelektrike.png");
+  background-image: url("../images/ElectronicCircuits.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
