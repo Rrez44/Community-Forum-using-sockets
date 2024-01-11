@@ -1,3 +1,5 @@
+Our public domain: https://fiek-community.onrender.com/login
+
 This is a project that serves as an intro to web-programming,
 
 We have created a basic webpage that uses node.js as the backend to allow us communication through sockets. We used the sockets to emmit data to all users connected which helped us achieve our vision of connecting people through our chat application.
